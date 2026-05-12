@@ -30,8 +30,6 @@
 
 ---
 
----
-
 ## Vue d'ensemble
 
 Ce projet implémente un système de **détection d'objets multi-classe** capable d'identifier et localiser automatiquement des fractures osseuses sur des radiographies X. Il repose sur l'architecture **YOLOv8n** (Ultralytics) et couvre **7 classes anatomiques** distinctes.
@@ -54,25 +52,28 @@ En radiologie d'urgence, le diagnostic d'une fracture requiert l'attention d'un 
 
 ---
 
----
-
 ## Demo Video
 
 **Démonstration du modèle en action — détection de fractures en temps réel**
 
 <div align="center">
 
-<video width="720" height="480" controls style="border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-  <source src="https://raw.githubusercontent.com/letdatatalk-ao/FRACTUREAI/main/Demo.mp4" type="video/mp4">
-  <p>Votre navigateur ne supporte pas la vidéo HTML5. <a href="https://github.com/letdatatalk-ao/FRACTUREAI/raw/main/Demo.mp4">Cliquez ici pour télécharger la vidéo.</a></p>
+[![Watch the Demo Video](https://img.shields.io/badge/▶️%20Regarder%20la%20Démo-Google%20Drive-red?style=for-the-badge)](https://drive.google.com/file/d/1dH8LXTJncZEdX_nktRS7PVUqtfjjsVzY/view?usp=sharing)
+
+**Ou :**
+
+<video width="720" height="480" controls style="border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px auto; display: block;">
+  <source src="https://drive.google.com/uc?export=download&id=1dH8LXTJncZEdX_nktRS7PVUqtfjjsVzY" type="video/mp4">
+  <p>Votre navigateur ne supporte pas la vidéo HTML5. <a href="https://drive.google.com/file/d/1dH8LXTJncZEdX_nktRS7PVUqtfjjsVzY/view?usp=sharing">Cliquez ici pour accéder à la vidéo.</a></p>
 </video>
 
 </div>
 
-**Contenu de la vidéo :**
-- ✅ Inférence en temps réel sur des radiographies de test
-- ✅ Affichage des bounding boxes avec score de confiance par classe
-- ✅ Comparaison Modèle 1 (baseline) vs Modèle 2 (fine-tuné)
+### Contenu de la vidéo :
+- ✅ **Inférence en temps réel** sur des radiographies de test
+- ✅ **Affichage des bounding boxes** avec score de confiance par classe
+- ✅ **Comparaison Modèle 1** (baseline) vs **Modèle 2** (fine-tuné)
+- ✅ **Visualisation des détections** par zone anatomique
 
 > **💡 Conseil :** Pour une meilleure expérience, assurez-vous d'une connexion Internet stable. La vidéo se chargera automatiquement lors du scroll.
 
@@ -147,16 +148,17 @@ Génération data.yaml  ──►  Dataset YOLO unifié (7 classes)
 FRACTUREAI/
 │
 ├── Notebooks/
-│   ├── Collection des données.ipynb      # Construction & nettoyage du dataset
-│   ├── notebook_Fracture_Detection.ipynb # Pipeline ML complet (EDA -> Modele 2)
-│   └── notebook_Supplementaire_DETR.ipynb
+│   ├── Collection des données.ipynb           # Construction & nettoyage du dataset
+│   ├── notebook_Fracture_Detection.ipynb      # Pipeline ML complet (EDA -> Modele 2)
+│   └── notebook_Supplementaire_DETR.ipynb     # Essai architecture DETR
 │
-├── Rapport- Très important pour la Lecture/
-│   └── rapport_Détection_de_Fractures_Osseuses.pdf
+├── Rapport - Très important pour la Lecture/
+│   └── rapport_Détection_de_Fractures_Osseuses.pdf  # Rapport académique (120 pages)
 │
-├── Demo.mp4
-├── main.py
-└── README.md
+├── Demo.mp4                                   # Démonstration du modèle
+├── main.py                                    # Script principal
+├── pyproject.toml                             # Dépendances Python
+└── README.md                                  # Ce fichier
 ```
 
 ### Notebooks
@@ -165,6 +167,7 @@ FRACTUREAI/
 |---|---|---|
 | `Collection_des_données.ipynb` | Construction du dataset | Téléchargement Roboflow, remapping labels, intégration FracAtlas, génération YAML |
 | `notebook_Fracture_Detection.ipynb` | Pipeline ML complet | EDA, preprocessing, Modèle 1, augmentation, Modèle 2, comparaison |
+| `notebook_Supplementaire_DETR.ipynb` | Exploration DETR | Implémentation et évaluation de l'architecture Transformer |
 
 ---
 
@@ -380,15 +383,15 @@ FRACTUREAI/
 ├── Notebooks/
 │   ├── Collection des données.ipynb           # Construction & nettoyage du dataset
 │   ├── notebook_Fracture_Detection.ipynb      # Pipeline ML complet (EDA -> Modele 2)
-│   └── notebook_Supplementaire_Model_DeTr.ipynb  # Essai architecture DETR
+│   └── notebook_Supplementaire_DETR.ipynb     # Essai architecture DETR
 │
-├── Rapport- Très important pour la Lecture/
+├── Rapport - Très important pour la Lecture/
 │   └── rapport_Détection_de_Fractures_Osseuses.pdf  # Rapport académique (120 pages)
 │
 ├── Demo.mp4                                   # Démonstration du modèle
 ├── main.py                                    # Script principal
 ├── pyproject.toml                             # Dépendances Python
-└── README.md
+└── README.md                                  # Ce fichier
 ```
 
 ---
@@ -463,5 +466,6 @@ Le dataset est disponible publiquement sur Kaggle sous licence [CC BY 4.0](https
 [![YOLOv8](https://img.shields.io/badge/Model-YOLOv8n-blue?style=flat-square)](https://github.com/ultralytics/ultralytics)
 [![GitHub](https://img.shields.io/badge/GitHub-FRACTUREAI-black?logo=github&style=flat-square)](https://github.com/letdatatalk-ao/FRACTUREAI)
 [![EPT](https://img.shields.io/badge/Institution-EPT%20Tunis-red?style=flat-square)](https://www.ept.tn)
+[![Demo Video](https://img.shields.io/badge/Demo-Google%20Drive-red?logo=google&style=flat-square)](https://drive.google.com/file/d/1dH8LXTJncZEdX_nktRS7PVUqtfjjsVzY/view?usp=sharing)
 
 </div>
