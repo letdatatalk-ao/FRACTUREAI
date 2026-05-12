@@ -1,4 +1,4 @@
-# 🦴 Détection de Fractures Osseuses par Deep Learning
+# Détection de Fractures Osseuses par Deep Learning
 
 <div align="center">
 
@@ -15,22 +15,24 @@
 
 ---
 
-## 📋 Table des Matières
+## Table des Matières
 
-- [Vue d'ensemble](#-vue-densemble)
-- [Démo Vidéo](#-démo-vidéo)
-- [Dataset](#-dataset)
-- [Architecture du Projet](#-architecture-du-projet)
-- [Pipeline Complet](#-pipeline-complet)
-- [Résultats](#-résultats)
-- [Installation](#-installation)
-- [Utilisation](#-utilisation)
-- [Structure des Fichiers](#-structure-des-fichiers)
-- [Équipe](#-équipe)
+- [Vue d'ensemble](#vue-densemble)
+- [Demo Video](#demo-video)
+- [Dataset](#dataset)
+- [Architecture du Projet](#architecture-du-projet)
+- [Pipeline Complet](#pipeline-complet)
+- [Résultats](#résultats)
+- [Installation](#installation)
+- [Utilisation](#utilisation)
+- [Structure des Fichiers](#structure-des-fichiers)
+- [Equipe](#equipe)
 
 ---
 
-## 🔍 Vue d'ensemble
+---
+
+## Vue d'ensemble
 
 Ce projet implémente un système de **détection d'objets multi-classe** capable d'identifier et localiser automatiquement des fractures osseuses sur des radiographies X. Il repose sur l'architecture **YOLOv8n** (Ultralytics) et couvre **7 classes anatomiques** distinctes.
 
@@ -52,16 +54,13 @@ En radiologie d'urgence, le diagnostic d'une fracture requiert l'attention d'un 
 
 ---
 
-## 🎬 Démo Vidéo
+---
 
-> **📹 Démonstration du modèle en action — détection de fractures en temps réel**
+## Demo Video
 
-https://github.com/VOTRE_USERNAME/FRACTUREAI/blob/main/Demo.mp4
+**Démonstration du modèle en action — détection de fractures en temps réel**
 
-> ⚠️ **Note :** Le fichier `Demo.mkv` doit être converti en `Demo.mp4` pour l'affichage intégré GitHub.  
-> Commande de conversion : `ffmpeg -i Demo.mkv -c:v libx264 -c:a aac Demo.mp4`  
-> Si vous gardez le `.mkv`, utilisez ce lien cliquable à la place :  
-> [▶ Télécharger et voir la démo (Demo.mkv)](https://github.com/VOTRE_USERNAME/FRACTUREAI/blob/main/Demo.mkv)
+https://github.com/letdatatalk-ao/FRACTUREAI/blob/main/Demo.mp4
 
 La vidéo montre :
 - Inférence en temps réel sur des radiographies de test
@@ -70,11 +69,11 @@ La vidéo montre :
 
 ---
 
-## 📦 Dataset
+## Dataset
 
 ### Dataset personnalisé sur Kaggle
 
-> 🔗 **[fracture-research-dataset — Kaggle](https://www.kaggle.com/datasets/aymenouerghi07/fracture-dataset/data)**
+**[fracture-research-dataset — Kaggle](https://www.kaggle.com/datasets/aymenouerghi07/fracture-dataset/data)**
 
 Ce dataset a été **entièrement construit par l'équipe** à partir de deux sources hétérogènes, puis unifié, nettoyé et formaté au format YOLO.
 
@@ -133,16 +132,21 @@ Génération data.yaml  ──►  Dataset YOLO unifié (7 classes)
 
 ---
 
-## 🏗️ Architecture du Projet
+## Architecture du Projet
 
 ```
-fracture-detection/
+FRACTUREAI/
 │
-├── 📓 Collection_des_données.ipynb      # Construction & nettoyage du dataset
-├── 📓 notebook_Fracture_Detection.ipynb # Pipeline ML complet (EDA → Modèle 2)
+├── Notebooks/
+│   ├── Collection des données.ipynb      # Construction & nettoyage du dataset
+│   ├── notebook_Fracture_Detection.ipynb # Pipeline ML complet (EDA -> Modele 2)
+│   └── notebook_Supplementaire_DETR.ipynb
 │
-├── 📄 rapport_Fractures_Osseuses.pdf   # Rapport académique complet (120 pages)
+├── Rapport- Très important pour la Lecture/
+│   └── rapport_Détection_de_Fractures_Osseuses.pdf
 │
+├── Demo.mp4
+├── main.py
 └── README.md
 ```
 
@@ -155,7 +159,7 @@ fracture-detection/
 
 ---
 
-## 🔄 Pipeline Complet
+## Pipeline Complet
 
 ### Étape 1 — Exploration des Données (EDA)
 
@@ -231,7 +235,7 @@ L'équipe a également exploré l'architecture **DETR** (Carion et al., ECCV 202
 
 ---
 
-## 📊 Résultats
+## Résultats
 
 ### Métriques Finales
 
@@ -254,7 +258,7 @@ Le **Modèle 2** est recommandé pour usage clinique car :
 - Vitesse d'inférence de **3.4 ms** → compatible avec l'usage en temps réel
 - Meilleur Recall sur humérus, fémur et jambe (os longs)
 
-> ⚕️ **Note clinique :** En contexte médical, le Recall (sensibilité) est la métrique prioritaire — rater une fracture est plus grave qu'une fausse alarme. Le Modèle 1 présente un meilleur Recall global (0.614 vs 0.593) et pourrait être préféré dans certains contextes de dépistage.
+> **Note clinique :** En contexte médical, le Recall (sensibilité) est la métrique prioritaire — rater une fracture est plus grave qu'une fausse alarme. Le Modèle 1 présente un meilleur Recall global (0.614 vs 0.593) et pourrait être préféré dans certains contextes de dépistage.
 
 ### Courbes d'entraînement
 
@@ -267,7 +271,7 @@ Aucun signe d'overfitting — les courbes train et validation restent proches.
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ### Prérequis
 
@@ -278,8 +282,8 @@ Aucun signe d'overfitting — les courbes train et validation restent proches.
 ### Cloner le dépôt
 
 ```bash
-git clone https://github.com/VOTRE_USERNAME/fracture-detection.git
-cd fracture-detection
+git clone https://github.com/letdatatalk-ao/FRACTUREAI.git
+cd FRACTUREAI
 ```
 
 ### Installer les dépendances
@@ -301,7 +305,7 @@ unzip fracture-dataset.zip -d ./data/
 
 ---
 
-## 🚀 Utilisation
+## Utilisation
 
 ### Entraînement
 
@@ -359,54 +363,28 @@ metrics_test = model.val(data='data.yaml', split='test')
 
 ---
 
-## 📁 Structure des Fichiers
+## Structure des Fichiers
 
 ```
-fracture-detection/
+FRACTUREAI/
 │
-├── data/
-│   └── fracture_research_dataset/
-│       ├── train/images/       # 5 737 images (après downsampling)
-│       ├── train/labels/       # Annotations YOLO
-│       ├── valid/images/       # 883 images
-│       ├── valid/labels/
-│       ├── test/images/        # 753 images
-│       ├── test/labels/
-│       └── data.yaml
+├── Notebooks/
+│   ├── Collection des données.ipynb           # Construction & nettoyage du dataset
+│   ├── notebook_Fracture_Detection.ipynb      # Pipeline ML complet (EDA -> Modele 2)
+│   └── notebook_Supplementaire_Model_DeTr.ipynb  # Essai architecture DETR
 │
-├── runs/
-│   ├── fracture_model1_yolov8n/
-│   │   └── weights/
-│   │       ├── best.pt         # Meilleur checkpoint M1
-│   │       └── last.pt
-│   └── fracture_model2_finetuned/
-│       └── weights/
-│           ├── best.pt         # Meilleur checkpoint M2 ✅ (recommandé)
-│           └── last.pt
+├── Rapport- Très important pour la Lecture/
+│   └── rapport_Détection_de_Fractures_Osseuses.pdf  # Rapport académique (120 pages)
 │
-├── outputs/
-│   ├── 01_class_distribution.png
-│   ├── 02_downsampling.png
-│   ├── 03_training_curves_model1.png
-│   ├── 04_inference_test_model1.png
-│   ├── 05_error_analysis_model1.png
-│   ├── 05b_error_analysis_model2.png
-│   ├── 06_augmentation_preview.png
-│   ├── 07_training_curves_model2.png
-│   ├── 08_comparison_global.png
-│   ├── 09_comparison_per_class.png
-│   ├── 10_training_curves_comparison.png
-│   └── 11_error_analysis_comparison.png
-│
-├── Collection_des_données.ipynb
-├── notebook_Fracture_Detection.ipynb
-├── rapport_Fractures_Osseuses.pdf
+├── Demo.mp4                                   # Démonstration du modèle
+├── main.py                                    # Script principal
+├── pyproject.toml                             # Dépendances Python
 └── README.md
 ```
 
 ---
 
-## 👥 Équipe
+## Equipe
 
 Projet réalisé dans le cadre du module **Data Science**  
 **École Polytechnique de Tunisie — Année universitaire 2026/2027**
@@ -423,7 +401,7 @@ Projet réalisé dans le cadre du module **Data Science**
 
 ---
 
-## 📚 Références Scientifiques
+## Références Scientifiques
 
 ```bibtex
 @article{garcea2023augmentation,
@@ -461,7 +439,7 @@ Projet réalisé dans le cadre du module **Data Science**
 
 ---
 
-## 📄 Licence
+## Licence
 
 Ce projet est réalisé à des fins académiques dans le cadre de l'École Polytechnique de Tunisie.  
 Le dataset est disponible publiquement sur Kaggle sous licence [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
@@ -470,10 +448,11 @@ Le dataset est disponible publiquement sur Kaggle sous licence [CC BY 4.0](https
 
 <div align="center">
 
-**🏛️ École Polytechnique de Tunisie — Data Science 2026/2027**
+**École Polytechnique de Tunisie — Data Science 2026/2027**
 
 [![Kaggle Dataset](https://img.shields.io/badge/Dataset-Kaggle-20BEFF?logo=kaggle&style=flat-square)](https://www.kaggle.com/datasets/aymenouerghi07/fracture-dataset/data)
 [![YOLOv8](https://img.shields.io/badge/Model-YOLOv8n-blue?style=flat-square)](https://github.com/ultralytics/ultralytics)
+[![GitHub](https://img.shields.io/badge/GitHub-FRACTUREAI-black?logo=github&style=flat-square)](https://github.com/letdatatalk-ao/FRACTUREAI)
 [![EPT](https://img.shields.io/badge/Institution-EPT%20Tunis-red?style=flat-square)](https://www.ept.tn)
 
 </div>
