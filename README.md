@@ -60,12 +60,21 @@ En radiologie d'urgence, le diagnostic d'une fracture requiert l'attention d'un 
 
 **Démonstration du modèle en action — détection de fractures en temps réel**
 
-https://github.com/letdatatalk-ao/FRACTUREAI/blob/main/Demo.mp4
+<div align="center">
 
-La vidéo montre :
-- Inférence en temps réel sur des radiographies de test
-- Affichage des bounding boxes avec score de confiance par classe
-- Comparaison Modèle 1 (baseline) vs Modèle 2 (fine-tuné)
+<video width="720" height="480" controls style="border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+  <source src="https://raw.githubusercontent.com/letdatatalk-ao/FRACTUREAI/main/Demo.mp4" type="video/mp4">
+  <p>Votre navigateur ne supporte pas la vidéo HTML5. <a href="https://github.com/letdatatalk-ao/FRACTUREAI/raw/main/Demo.mp4">Cliquez ici pour télécharger la vidéo.</a></p>
+</video>
+
+</div>
+
+**Contenu de la vidéo :**
+- ✅ Inférence en temps réel sur des radiographies de test
+- ✅ Affichage des bounding boxes avec score de confiance par classe
+- ✅ Comparaison Modèle 1 (baseline) vs Modèle 2 (fine-tuné)
+
+> **💡 Conseil :** Pour une meilleure expérience, assurez-vous d'une connexion Internet stable. La vidéo se chargera automatiquement lors du scroll.
 
 ---
 
