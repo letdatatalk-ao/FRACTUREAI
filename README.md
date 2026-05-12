@@ -401,13 +401,13 @@ FRACTUREAI/
 Projet réalisé dans le cadre du module **Data Science**  
 **École Polytechnique de Tunisie — Année universitaire 2026/2027**
 
-| Nom | Rôle |
-|---|---|
-| **Yassine MEGDICHE** | Data Engineering & Pipeline |
-| **Aymen OUERGHI** | Dataset Kaggle & Modélisation |
-| **Achref GUESMI** | Augmentation & Évaluation |
-| **Salmen BOUAZIZ** | EDA & Visualisation |
-| **Mohammed MISSAOUI** | DETR & Analyse d'erreurs |
+| Nom |
+|---|
+| **Yassine MEGDICHE** | 
+| **Aymen OUERGHI** | 
+| **Achref GUESMI** | 
+| **Salmen BOUAZIZ** | 
+| **Mohammed MISSAOUI** | 
 
 **Encadrante :** Mme. Selima BESBES
 
